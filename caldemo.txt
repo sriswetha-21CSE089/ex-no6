@@ -1,0 +1,68 @@
+package com.mycompany.car;
+
+import java.util.*;
+public class Car 
+{
+
+    public static void main(String[] args) 
+    {
+       assistance a=new assistance();
+       Scanner o=new Scanner(System.in);
+       System.out.println("1.number\n2.add\n3.sub\n4.multiply\n5.divide\n");
+       int i=1;
+       while(i==1)
+       {
+           System.out.println("enter your choice:");
+           int ch=o.nextInt();
+           switch(ch)
+           {
+               case 1->a.get();
+               case 2->a.add();
+               case 3->a.sub();
+               case 4->a.multi();
+               case 5->a.divide();
+           }
+           
+       }
+    }
+}
+class caldemo
+{
+   double n1,n2;
+   int a,b;   
+    void get()
+    {   
+        try
+        {
+        n1=1+(Math.random())*5000;
+        a=(int)n1;
+        System.out.println(a);
+        n2=1+(Math.random())*5000;
+        b=(int)n2;
+        System.out.println(b);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+}
+class assistance extends caldemo
+{
+    void add()
+    {
+        System.out.println(a+b);
+    }
+    void sub()
+    {
+        System.out.println(a-b);
+    }
+    void multi()
+    {
+        System.out.println("multiply="+a*b);
+    }
+    void divide() 
+    {
+        System.out.println(a/b);
+    }
+}
