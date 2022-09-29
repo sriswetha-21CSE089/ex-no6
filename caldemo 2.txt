@@ -1,0 +1,54 @@
+
+package com.mycompany.specialno;
+
+import java.util.Scanner;
+
+public class Specialno 
+{
+
+    public static void main(String[] args) 
+    {
+        caldemo c=new caldemo();
+        c.show();
+    }
+}
+class caldemo
+{   
+    int n1,n2;
+    void show()
+    {
+     for(int i=1;i<=5;i++)
+     {
+      n1=(int) (1+(Math.random())*5000);
+      n2=(int) (1+(Math.random())*5000);
+      System.out.println("what is the sum of"+n1+"and"+n2+"?");
+      Scanner sc=new Scanner(System.in);
+      try
+      {
+      if(sc.hasNextInt())
+      {    
+          if(sc.nextInt()==add(n1,n2))
+          {
+           System.out.println("correct");
+          }
+          else
+          {
+            System.out.println("incorrect");  
+          }
+      }
+      else
+      {
+          System.out.println("give a valid integer as answer");
+      }
+      }
+      catch(Exception e)
+      {
+          System.out.println(e);
+      }
+     } 
+    }
+    int add(int a,int b)
+    {
+        return a+b;
+    }
+}
